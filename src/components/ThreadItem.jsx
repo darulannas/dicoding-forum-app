@@ -130,7 +130,7 @@ function ThreadItem({
         <p className="mr-4">
           Dibuat oleh
           <span className="pl-1">{ownerId}</span>
-          <span className="pl-2">
+          <span className="pl-3">
             {postedAt(createdAt)}
           </span>
         </p>

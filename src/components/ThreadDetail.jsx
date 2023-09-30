@@ -67,7 +67,7 @@ function ThreadDetail({
   const sanitizedBody = DOMPurify.sanitize(body);
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg">
+    <div className="bg-white p-6 shadow-lg">
       <div className="bg-gray-300 p-2 inline-block">
         #
         {category}
@@ -103,8 +103,8 @@ function ThreadDetail({
           Dibuat oleh
           <span className="pl-1"><img src={owner.avatar} alt={owner.name} className="inline-block w-8 h-8 rounded-full" /></span>
           <span className="pl-1">{owner.name}</span>
+          <span className="pl-3">{postedAt(createdAt)}</span>
         </p>
-        <p className="text-gray-600">{postedAt(createdAt)}</p>
       </div>
     </div>
   );

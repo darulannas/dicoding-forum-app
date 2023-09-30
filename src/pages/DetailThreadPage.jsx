@@ -57,9 +57,9 @@ function DetailThreadPage() {
           downVoteThread={onDownvoteThread}
           neutralVoteThread={onNeutralizevoteThread}
         />
+        <CommentInput />
       </div>
 
-      <CommentInput />
       <CommentList />
     </section>
   );

@@ -174,6 +174,22 @@ const api = (() => {
     return detailThread;
   }
 
+  async function getComment(threadId) {
+    const response = await fetch(`${BASE_URL}/threads/${threadId}`);
+
+    const responseJson = await response.json();
+
+    const { status, message, data } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const { detailThread: { comments } } = data;
+
+    return comments;
+  }
+
   async function createComment({
     threadId, content,
   }) {
@@ -326,6 +342,7 @@ const api = (() => {
     getAllThreads,
     createThread,
     getThreadDetail,
+    getComment,
     createComment,
     upvoteThread,
     downvoteThread,
